@@ -1,0 +1,59 @@
+body{
+    font-family:'Courier New', Courier, monospace;
+    background:url(/img/pbetter.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size:cover;
+    
+}
+header{
+
+}
+.logoimage{
+    width:380px;
+}
+.logoimage img{
+    float:left;
+    padding:0px 0px;
+}
+.logoimage p{
+    font-size:32px;
+    color:white;
+    padding-left:0px;
+    padding-top:70px;
+    float:right;
+}
+
+.logo{
+    width:200px;
+}
+h1{
+    display:inline;
+
+    text-align:center;
+    
+}
+.nav-bar{
+    width:80%;
+    margin: 0 auto;
+}
+
+.nav-bar ul{
+    float:right;
+    margin:0;
+    padding:0;
+}
+.nav-bar li{
+    font-size:2em;
+    display:inline-block;
+    list-style-type:none;
+    padding:102px 20px;
+ 
+}
+.nav-bar li a{
+    color:white;
+    text-decoration:none;
+}
+
+@media screen()
