@@ -1,61 +1,35 @@
-.border{
-    position:absolute;
-    top:50%;
-    left:47.5%;
-    display:inline-block;
-    margin-top:15%;
-    border:1px solid black;
-    border-radius:50%;
-    width:100px;
-    height:100px;
-}
-.inside{
-    position:absolute;
-    top:50%;
-    margin-top:15%;
-    display:inline-block;
-    left:47.5%;
-    border: 1px solid rgb(12, 214, 12);
-    border-radius:50%;
-    width:100px;
-    height:100px;
-    background-color:rgb(12, 214, 12);
+/* Copyright 2018 Google LLC.
+SPDX-License-Identifier: Apache-2.0 */
 
-}
-.circle{
-    position:absolute;
-    top:50%;
-    margin-top:15%;
-    display:inline-block;
-    left:47.5%px;
-    border: 1px solid rgb(12, 214, 12);
-    border-radius:50%;
-    width:100px;
-    height:100px;
-    background-color:rgb(12, 214, 12);
-    animation-name:pulse;
-    animation-duration:2s;
-    animation-iteration-count:infinite;
-}
+/* CSS files add styling rules to your content */
 
-@keyframes pulse{
-    0%{
-        transform:scale (1.4);
-        width:100px;
-        left:47.5%;
-        top:50%;
-        
-        height:100px;
-        opacity: 100%;
-    }
-    100%{
-        top:50%;
-        margin-top:11%;
-        left:44%;
-        width:200px;
-        height:200px;
+body {
+    font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+    margin: 2em;
+  }
+  
+  .container {
+      width:20%;
 
-        transform:scale (1.8);
-        opacity:0%;
-    }
-}
+    display: block;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  
+  .box {
+      
+    border: 3px solid #666;
+    background-color: #ddd;
+    border-radius: .5em;
+    padding: 10px;
+    cursor: move;
+    margin:10px;
+  }
+  
+  .box.over {
+    border: 3px dotted #666;
+  }
+  
+  [draggable] {
+    user-select: none;
+  }
