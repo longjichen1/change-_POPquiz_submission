@@ -9,6 +9,8 @@ const rand = Math.floor(Math.random() * 100);
 const rand2 = Math.floor(Math.random() * 100);
 const rand3 = Math.floor(Math.random() * 100);
 
+const choices = document.querySelectorAll('.choice');
+
 fetch('http://localhost:5000/api/billboard').then((response) => {
     return response.json()
     
@@ -24,15 +26,13 @@ fetch('http://localhost:5000/api/billboard').then((response) => {
         }
         songs.push(obj)
     }
-    console.log(songs)
-})
-const choices = document.querySelectorAll('.choice');
-choices.forEach((choice, index)=>{
-    console.log(songs)
-    console.log(songs[index])
-    choice.querySelector('img').src=songs[index]['image'];
-    choice.querySelector('p').innerText = songs[index]['name'] + '- by ' + songs[index]['artist'];
-    
+    // console.log(songs)
+}).then(() => {
+
+    choices.forEach((choice, index)=>{
+        choice.querySelector('img').src=songs[index]['image'];
+        choice.querySelector('p').innerText = songs[index]['name'] + '- by ' + songs[index]['artist'];
+    })
 })
 cards.forEach((card)=>{
     registerEventsOnCard(card);
