@@ -176,10 +176,10 @@
         border:8px solid white;
         border-radius:24px;
     }
-
+    
     .choice{
         position:relative;
-        margin-left:10%;
+        margin-left:11%;
         background-color:rgb(30, 58, 58);
         padding:2px;
         margin-top:20px;
@@ -224,7 +224,7 @@
     }
     .play{
         float:right;
-        width:55%;
+        width:45%;
     }
     .play img{
         position:relative;
@@ -234,14 +234,68 @@
         display:block;
         float:left;
     }
+    .instructions{
+        position:relative;
+        top:-20px;
+        margin-left:23%;
+        padding-bottom:160px;
+        
+    }
+    .instructions p{
+        text-align:center;
+    }
+    .submit-button{
+        display:inline-block;
+    }
+    .submit-button p{
+        position:relative;
+        top:-40px;
+        margin-top:20px;
+        font-size:20px;
+        background-color: rgb(30, 58, 58);
+        border: 5px solid rgb(30, 58, 58);
+        border-radius:24px;
+        color:white;
+        padding:12px;
+        margin-left:80px;
+        float:left;
+    }
+    .button:hover{
+        opacity:.5;
+    }
+    .choice h2{
+        display:none;
+        position:absolute;
+        left:-120px;
+        padding:0px;
+        font-size:20px;
+    }
+    
+    .reset{
+        display:inline-block;
+    }
+    .reset p{
+        position:relative;
+        float:right;
+        top:-40px;
+        margin-top:20px;
+        font-size:20px;
+        background-color: rgb(30, 58, 58);
+        border: 5px solid rgb(30, 58, 58);
+        border-radius:24px;
+        color:white;
+        padding:12px;
+        margin-left:160px;
+    }
 
 .dragging{
     opacity:.5;
 }
 
 footer h1{
+    display:none;
     position:relative;
-    top:1600px;
+    top:1200px;
 }
 a{
     text-decoration:none;

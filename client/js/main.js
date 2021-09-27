@@ -11,29 +11,34 @@ const rand3 = Math.floor(Math.random() * 100);
 
 const choices = document.querySelectorAll('.choice');
 
-fetch('http://localhost:5000/api/billboard').then((response) => {
-    return response.json()
+function getSongs(){
+    fetch('http://localhost:5000/api/billboard').then((response) => {
+        return response.json()
+        
+    }).then((data) => {
     
-}).then((data) => {
-
-    for (let i = 0; i < 3; i++) {
-        const rand = Math.floor(Math.random() * 100)
-        const obj = {
-            name: data[0][rand],
-            rank: rand,
-            artist: data[1][rand],
-            image: data[2][rand]
+        for (let i = 0; i < 3; i++) {
+            const rand = Math.floor(Math.random() * 100)
+            const obj = {
+                name: data[0][rand],
+                rank: rand+1,
+                artist: data[1][rand],
+                image: data[2][rand]
+            }
+            songs.push(obj)
         }
-        songs.push(obj)
-    }
-    // console.log(songs)
-}).then(() => {
-
-    choices.forEach((choice, index)=>{
-        choice.querySelector('img').src=songs[index]['image'];
-        choice.querySelector('p').innerText = songs[index]['name'] + '- by ' + songs[index]['artist'];
-    })
-})
+        // console.log(songs)
+    }).then(() => {
+        
+        choices.forEach((choice, index)=>{
+            choice.querySelector('img').src=songs[index]['image'];
+            choice.querySelector('p').innerText = songs[index]['name'] + '- by ' + songs[index]['artist'];
+            choice.querySelector('h2').innerText = "RANK: " + (songs[index]['rank']);
+            
+        })
+    })  
+}
+getSongs();
 cards.forEach((card)=>{
     registerEventsOnCard(card);
 });
@@ -80,3 +85,18 @@ function registerEventsOnCard(card){
         card.classList.remove('dragging');
     });
 }
+
+const button = document.querySelector('.submit-button');
+
+button.addEventListener('click', ()=>{
+    const rank = document.querySelectorAll('h2');
+    rank.forEach((ranking)=>{
+        ranking.style.display = "inline-block";
+    })
+})
+
+const reset = document.querySelector('.reset');
+
+reset.addEventListener('click', ()=>{
+    location.reload(true);
+})
