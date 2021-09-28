@@ -1,6 +1,6 @@
 #Change++ Project: POPQuiz
 
-This app is made with RESTful API. To start the app, make sure to run ```node index.js``` to start API.
+This app is made with RESTful API. To start the app, make sure to run ```node index.js``` (or wherever index.js is accessible) to start API.
 
 Project is made using HTML, CSS, and Vanilla JS. JS handles the functionality of the webapp including buttons and updated songs/artists/images.
 
